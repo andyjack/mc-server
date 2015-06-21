@@ -3,6 +3,9 @@
 * set up mx record for new domain to have mx as my existing domain
 * allow new domain in postfix, add an alias for postmaster@
 * log into server, do aptitude update.  Still 14.04.1 ubuntu
+* fix missing files on my cloud hosting server.  Thanks cloud hosting provider!  They delete all `/etc/cron.daily` files on their ubuntu image.
+  * `sudo debsums -a | grep -v OK`
+  * `for F in $pkgs; do sudo apt-get install -o Dpkg::Options::="--force-confmiss" --reinstall $F; done`
 * add andy@ user, with sudo: `usermod -G sudo -a andy`
 * add minecraft@ user, regular.  `passwd -d minecraft`
 * change root password. `sudo passwd`
